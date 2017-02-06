@@ -47,3 +47,12 @@ The program *might* be able to give its directions in current time
 5.3.2.5 Directions *might* be outputted within 2 seconds of execution
 
 ###5.4 Environment Requirements
+####5.4.1 Open Street Map
+5.4.1.1 The program shall use the data provided by open street map to locate its location inputs
+
+5.4.1.1 The program shall use the data provided by open street map to gather street data for routing.
+
+####5.4.2 Open Source Routing Machine
+5.4.2.1 The program shall create routes using OSRM's API
+
+5.4.2.2 The program shall manipulate routes using OSRM
