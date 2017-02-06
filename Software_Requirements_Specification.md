@@ -28,5 +28,22 @@ The program *might* be able to give its directions in current time
 
 
 ###5.3 Performance Requirements
+####5.3.1 Directions Input
+5.3.1.1 Should be an easy two field input form that overlays the original map
+
+5.3.1.2 A simple "Get Directions" button shall begin execution
+
+5.3.1.3 A database of addresses *might* give auto-complete suggestions
+
+####5.3.2 Routing Capabilities
+5.3.2.1 Directions shall give feedback on why they were chosen, visible from a dropdown.
+
+5.3.2.2 Directions shall be written out in steps to follow
+
+5.3.2.3 Route shall be highlighted on the map after output
+
+5.3.2.4 Directions should be outputted within 10 seconds of execution
+
+5.3.2.5 Directions *might* be outputted within 2 seconds of execution
 
 ###5.4 Environment Requirements
