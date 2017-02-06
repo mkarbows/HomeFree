@@ -8,7 +8,7 @@
 
  - [5.3 Performance Requirements](#53-performance-requirements)
 
- - [5.4 Environment Requirements](#54-environmental-requirements)
+ - [5.4 Environment Requirements](#54-environment-requirements)
 
 ###5.1 Introduction
 
