@@ -16,6 +16,9 @@ HomeFree is a mapping application that prioritizes righthand turns and avoids le
 
 This document is organizes the software requirements into three categories: functional, performance, and environment. Functional requirements include specifications that the program is expected to have. Performance requirements outline the completed system's abilities. Environment requirements lists the necessary resources for development, deployment, and execution.
 
+####UML Diagram
+![UML Diagram](SRS_UML.html)
+
 ###5.2 Functional Requirements
 ####5.2.1 Map Interface
 The program shall have an interface that has current and accurate map data
