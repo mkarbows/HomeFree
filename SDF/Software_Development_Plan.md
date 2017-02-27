@@ -27,6 +27,7 @@
 
 ###4.4 Project Schedule
 ####4.4.1 PERT / GANTT Chart
+![GANTT Chart](HomeFree_GANTT_Schedule.png)
 
 ####4.4.2 Task / Resource Table
 
