@@ -12,6 +12,9 @@
 
 ###4.1 Plan Introduction
 
+This Software Development Plan provides the details of the planned development for the HomeFree routing algorithm which provides an application for users to route directions in the safest possible fashion.
+
+
 
 ####4.1.1 Project Deliverables
 
