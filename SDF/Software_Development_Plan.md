@@ -1,4 +1,7 @@
-##HomeFree's Software Development Plan
+#HomeFree's Software Development Plan
+
+#HomeFree's Software Development Plan
+
 ###Table of Contents
 
  - [4.1 Plan Introduction](#41-plan-introduction)
