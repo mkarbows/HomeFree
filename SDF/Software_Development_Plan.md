@@ -1,5 +1,6 @@
 #HomeFree's Software Development Plan
 
+
 ###Table of Contents
 
  - [4.1 Plan Introduction](#41-plan-introduction)
@@ -12,12 +13,12 @@
 
 ###4.1 Plan Introduction
 
-This Software Development Plan provides the details of the planned development for the HomeFree routing algorithm which provides an application for users to route directions in the safest possible fashion.
-
+This Software Development Plan provides the details of the planned development for the HomeFree routing algorithm and application which provides routing directions in the safest fashion. The algorithm focuses on building routs with mainly right hand turns and avoiding left hand turns, and therefore safer driving paths are developed.
 
 
 ####4.1.1 Project Deliverables
-
+ - Right Priority Routing Algorithm
+ -
 
 ###4.2 Project Resources
 ####4.2.1 Hardware Resources
