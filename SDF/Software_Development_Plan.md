@@ -95,17 +95,6 @@ The development and documentation will work together to provide a ground for ful
 ![GANTT Chart](HomeFree_GANTT_Schedule.png)
 
 #### 4.4.2 Task / Resource Table
- - Create Testing Environment
- - Build Algorithm
- - Move to Swift & App Development
- - Plug Mapping into App
- - Alpha
-  - Individual bug Testing
-  - Cleaning of Code
-  - Cleaning of Documentation
- - Beta
-   - Have strangers test application
-   - Gain unbiased feedback, bug fixing
 
 | Task  | Resources |
 |-------|---------|
