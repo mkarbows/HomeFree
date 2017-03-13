@@ -58,6 +58,7 @@ An apple phone may possibly host the application. My personal device will be use
 #### 4.2.2 Software Resources
 ###### Text Editor
  - Atom: v1.15.0
+ - XCode (potentially)
 
 ###### Interpreter and Executer
  - Node v7.0.0
@@ -75,13 +76,49 @@ An apple phone may possibly host the application. My personal device will be use
 
 
 ### 4.3 Project Organization
+This individual project will be divided into the following major functions:
+ - Development
+ - Documentation
+ - Delivery
 
+#### Development
+Development will be segmented into major accomplishments with set due dates. If due dates are not met, it is important that I reach out for outside help to prevent major set backs.
+
+#### Documentation
+Development must be balanced with important documentation responsibilities. The Software Documents will be not only accomplished within given time frames but also continuously updated as development progresses and things are subject to change.
+
+#### Delivery
+The development and documentation will work together to provide a ground for full delivery. Development will help with presenting demos, while documentation helps articulate the application.
 
 ### 4.4 Project Schedule
-#### 4.4.1 PERT / GANTT Chart
+#### 4.4.1 GANTT Chart
 ![GANTT Chart](HomeFree_GANTT_Schedule.png)
 
 #### 4.4.2 Task / Resource Table
+ - Create Testing Environment
+ - Build Algorithm
+ - Move to Swift & App Development
+ - Plug Mapping into App
+ - Alpha
+  - Individual bug Testing
+  - Cleaning of Code
+  - Cleaning of Documentation
+ - Beta
+   - Have strangers test application
+   - Gain unbiased feedback, bug fixing
+
+| Task  | Resources |
+|-------|---------|
+| Create Testing Environment | Frontend Developer, Computer, OSRM Api, Node|
+| Build Algorithm | Backend Developer, Computer, OSRM, C++ |
+| Move to Swift (App Development) | App Developer, Computer, XCode |
+| Plug Mapping into App | Backend Developer and Integration, Computer, iPhone, XCode, OSRM Api  |
+| Alpha | Bug Fixers, Cleaning, biased feedback |
+| Beta | Strangers for unbiased testing and feedback, different iPhone models, bug fixing
+
+
 
 
 #### 4.4.3 Class Schedule
+ - Class Meets Mondays 4:20-7:20 in the KeckLab
+ - [Full schedule here](http://myweb.lmu.edu/bjohnson/cmsi402web2/classnotes.html)
