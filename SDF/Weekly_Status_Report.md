@@ -54,7 +54,7 @@ with the least amount of lefts.
     return waypointX, waypointY
 
 
-### Algorithm 2: Compute Multiple Waypoints
+#### Algorithm 2: Compute Multiple Waypoints
     def circlewaypoint(x1,y1, x2,y2):
 
     dX = x1 - x2
