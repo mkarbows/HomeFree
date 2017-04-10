@@ -1,4 +1,4 @@
-#Project Proposal
+# Project Proposal
 
 HomeFree is a mapping application that attempts to make only righthand turns. It uses open source map data provided by [OpenStreetMap](http://www.openstreetmap.org/#map=11/33.9425/-118.2331). HomeFree is similar 
 to Waze because it provides mapped directions that are contstructed based on a specific element. In Waze,
