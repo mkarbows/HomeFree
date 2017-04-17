@@ -166,7 +166,6 @@ router._convertRoute = function(responseRoute) {
       });
     });
   };
-
   return resp;
 };
 var lrmControl = L.Routing.control(Object.assign(controlOptions, {
