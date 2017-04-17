@@ -18936,9 +18936,9 @@ var controlOptions = {
   collapsible: options.lrm.collapsible
 };
 
-//lkonch
-console.log(controlOptions.plan._waypoints); //lkonch
-console.log(controlOptions); //lkonch
+// //lkonch
+// console.log(controlOptions.plan._waypoints); //lkonch
+// console.log(controlOptions); //lkonch
 var router = (new L.Routing.OSRMv1(controlOptions));
 
 router._convertRouteOriginal = router._convertRoute;
@@ -18954,10 +18954,23 @@ router._convertRoute = function(responseRoute) {
         // abusing the text property to save the original osrm step
         // for later use in the itnerary builder
         resp.instructions[i].text = step;
+
         //lkonch
         if (resp.instructions[i] && (resp.instructions[i].modifier === "Left" || resp.instructions[i].modifier === "SharpLeft" || resp.instructions[i].modifier === "SlightLeft")) {
-          console.log("left!");
-        }
+          var longA = resp.instructions[i].text.maneuver.location[0];
+          var latA = resp.instructions[i].text.maneuver.location[1];
+
+          // if (resp.instructions[i+1]) {
+          //   var x = JSON.parse(JSON.stringify(resp.instructions[i+1]));
+          //   console.log(x);
+          //   var longB = resp.instructions[i + 1].text.maneuver.location[0];
+          //   var latB = resp.instructions[i + 1].text.maneuver.location[1];
+          // }
+
+          console.log("Lat: " + latA);
+          console.log("Long: " + longA);
+
+         }
         i++;
       });
     });
@@ -18983,7 +18996,7 @@ map.on('click', addWaypoint);
 
 function addWaypoint(e) {
   var length = lrmControl.getWaypoints().filter(function(pnt) {
-    console.log(pnt.latLng); //lkonch
+    //console.log(pnt.latLng); //lkonch
     return pnt.latLng;
   });
   length = length.length;
