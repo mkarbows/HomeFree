@@ -18936,9 +18936,7 @@ var controlOptions = {
   collapsible: options.lrm.collapsible
 };
 
-// //lkonch
-// console.log(controlOptions.plan._waypoints); //lkonch
-// console.log(controlOptions); //lkonch
+console.log(controlOptions); //lkonch
 var router = (new L.Routing.OSRMv1(controlOptions));
 
 router._convertRouteOriginal = router._convertRoute;
@@ -18967,8 +18965,11 @@ router._convertRoute = function(responseRoute) {
           //   var latB = resp.instructions[i + 1].text.maneuver.location[1];
           // }
 
-          console.log("Lat: " + latA);
-          console.log("Long: " + longA);
+          console.log(latA);
+          console.log(longA);
+          var newPoint = L.latLng(latA, longA);
+          console.log(newPoint);
+          //resp.waypoints.push(new L.Routing.Waypoint(newPoint));
 
          }
         i++;
@@ -18978,9 +18979,11 @@ router._convertRoute = function(responseRoute) {
   console.log(resp); //lkonch
   return resp;
 };
+
 var lrmControl = L.Routing.control(Object.assign(controlOptions, {
   router: router
 })).addTo(map);
+
 var toolsControl = tools.control(localization.get(mergedOptions.language), localization.getLanguages(), options.tools).addTo(map);
 var state = state(map, lrmControl, toolsControl, mergedOptions);
 
@@ -18990,13 +18993,10 @@ plan.on('waypointgeocoded', function(e) {
   }
 });
 
-// add onClick event
-//lkonch - called when second way point is 'clicked'
 map.on('click', addWaypoint);
 
 function addWaypoint(e) {
   var length = lrmControl.getWaypoints().filter(function(pnt) {
-    //console.log(pnt.latLng); //lkonch
     return pnt.latLng;
   });
   length = length.length;
@@ -19007,6 +19007,24 @@ function addWaypoint(e) {
     lrmControl.spliceWaypoints(length - 1, 1, e.latlng);
   }
 }
+
+//lkonch
+function buildWaypoint(latlng) {
+
+  var length = lrmControl.getWaypoints().filter(function(pnt) {
+
+    return pnt.latLng;
+  });
+  length = length.length;
+  if (!length) {
+    lrmControl.spliceWaypoints(0, 1, latlng);
+  } else {
+    if (length === 1) length = length + 1;
+    lrmControl.spliceWaypoints(length - 1, 1, latlng);
+  }
+}
+buildWaypoint(L.latLng(38.908578, -77.02308));
+
 
 // User selected routes
 lrmControl.on('alternateChosen', function(e) {
