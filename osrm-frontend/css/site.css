@@ -168,10 +168,10 @@
   right: 0px;
   bottom: 0px;
   margin: 0px !important;
-  background-image: url('../images/osrm_logo.svg');
+  background-image: url('../images/HomeFree_logo.png');
   -webkit-background-size: 200px 60px;
   background-size: 200px 60px;
-  background-position: -20px 10px;
+  background-position: 20px 10px;
   background-repeat: no-repeat;
   padding-top: 50px;
 }
@@ -696,9 +696,9 @@ td.distance {
 ------------------------------------------------------- */
 @media only screen and (max-width:880px) {
   .osrm-directions-summary {
-    background-image: url('../images/osrm_logo.svg');
+    background-image: url('../images/HomeFree_logo.png');
     -webkit-background-size: 200px 45px;
-    background-size: 200px 45px;
+    background-size: 500px 45px;
     background-repeat: no-repeat;
     margin: 0;
     padding-top: 40px;
@@ -785,7 +785,7 @@ td.distance {
 ------------------------------------------------------- */
 @media only screen and (max-width:400px) {
 .osrm-directions-summary {
-  background-image: url('../images/osrm_logo.svg');
+  background-image: url('../images/HomeFree_logo.png');
   -webkit-background-size: 200px 45px;
   background-size: 200px 45px;
   background-repeat: no-repeat;
@@ -829,7 +829,7 @@ td.distance {
   max-width: 58%;
   min-width: 40%;
 }
-  
+
 .leaflet-routing-alt table td, .leaflet-routing-alt table {
     margin-top: 10px;
     padding-bottom: 0px;
@@ -839,7 +839,7 @@ td.distance {
     line-height: 16px;
 }
 
-.leaflet-routing-alt .osrm-directions-instructions, 
+.leaflet-routing-alt .osrm-directions-instructions,
 .leaflet-routing-alternatives-container {
     position: fixed;
     right: 0px;
