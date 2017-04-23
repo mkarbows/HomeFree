@@ -18936,7 +18936,6 @@ var controlOptions = {
   collapsible: options.lrm.collapsible
 };
 
-console.log(controlOptions); //lkonch
 var router = (new L.Routing.OSRMv1(controlOptions));
 
 router._convertRouteOriginal = router._convertRoute;
@@ -18967,16 +18966,18 @@ router._convertRoute = function(responseRoute) {
 
           console.log(latA);
           console.log(longA);
-          var newPoint = L.latLng(latA, longA);
-          console.log(newPoint);
-          //resp.waypoints.push(new L.Routing.Waypoint(newPoint));
+
+          var newPoint = L.latLng(latA + 1, longA); //lkonch
+
+          //plan.spliceWaypoints(1, 0, newPoint);
+
 
          }
         i++;
       });
     });
   };
-  console.log(resp); //lkonch
+  // console.log(resp); //lkonch
   return resp;
 };
 
@@ -19009,21 +19010,20 @@ function addWaypoint(e) {
 }
 
 //lkonch
-function buildWaypoint(latlng) {
-
-  var length = lrmControl.getWaypoints().filter(function(pnt) {
-
-    return pnt.latLng;
-  });
-  length = length.length;
-  if (!length) {
-    lrmControl.spliceWaypoints(0, 1, latlng);
-  } else {
-    if (length === 1) length = length + 1;
-    lrmControl.spliceWaypoints(length - 1, 1, latlng);
-  }
-}
-buildWaypoint(L.latLng(38.908578, -77.02308));
+// function buildWaypoint(latlng) {
+//
+//   var length = lrmControl.getWaypoints().filter(function(pnt) {
+//
+//     return pnt.latLng;
+//   });
+//   length = length.length;
+//   if (!length) {
+//     lrmControl.spliceWaypoints(0, 1, latlng);
+//   } else {
+//     if (length === 1) length = length + 1;
+//     lrmControl.spliceWaypoints(length - 1, 1, latlng);
+//   }
+// }
 
 
 // User selected routes
