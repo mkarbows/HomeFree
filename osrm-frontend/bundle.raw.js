@@ -18970,9 +18970,39 @@ router._convertRoute = function(responseRoute) {
           console.log(latB);
           console.log(longB);
 
-          var newPoint = L.latLng(latA + 1, longA); //lkonch
+          var ratio = 0.0015;
 
-          //plan.spliceWaypoints(1, 0, newPoint);
+          var deltaX = latA - latB;
+          var deltaY = longA - longB;
+          var deltaXsign = 1;
+          var deltaYsign = 1;
+          var scaledDeltaX;
+          var scaledDeltaY;
+
+          if (deltaX < 0) {
+            deltaXsign = -1;
+          }
+          if (deltaY < 0) {
+            deltaYsign = -1;
+          }
+
+          if (deltaX === 0) {
+            scaledDeltaY = deltaYsign * ratio;
+            scaledDeltaX = 0;
+          } else {
+            var x = Math.abs(deltaY / deltaX);
+            if (x < 1) {
+              scaledDeltaY = deltaYsign * x * ratio;
+              scaledDeltaX = deltaXsign * ratio;
+            } else {
+              scaledDeltaY = deltaYsign * ratio;
+              scaledDeltaX = deltaXsign * (1/m) * ratio;
+            }
+          }
+
+          var newPoint = L.latLng(latA + scaledDeltaX, longA + scaledDeltaY); //lkonch
+
+          plan.spliceWaypoints(1, 0, newPoint);
 
 
          }
