@@ -18953,7 +18953,7 @@ router._convertRoute = function(responseRoute) {
         resp.instructions[i].text = step;
 
         //lkonch
-        if (resp.instructions[i] && (resp.instructions[i].modifier === "Left" || resp.instructions[i].modifier === "SharpLeft" || resp.instructions[i].modifier === "SlightLeft")) {
+        if (resp.instructions[i] && (resp.instructions[i].modifier === "Left" || resp.instructions[i].modifier === "SharpLeft" || resp.instructions[i].modifier === "SlightLeft") && resp.instructions.length < 6) {
           var longA = resp.instructions[i].text.maneuver.location[0];
           var latA = resp.instructions[i].text.maneuver.location[1];
 
@@ -18964,11 +18964,6 @@ router._convertRoute = function(responseRoute) {
             var longB = resp.instructions[i + 1].text.maneuver.location[0];
             var latB = resp.instructions[i + 1].text.maneuver.location[1];
           }
-
-          console.log(latA);
-          console.log(longA);
-          console.log(latB);
-          console.log(longB);
 
           var ratio = 0.0015;
 
