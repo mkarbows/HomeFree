@@ -18957,15 +18957,18 @@ router._convertRoute = function(responseRoute) {
           var longA = resp.instructions[i].text.maneuver.location[0];
           var latA = resp.instructions[i].text.maneuver.location[1];
 
-          // if (resp.instructions[i+1]) {
-          //   var x = JSON.parse(JSON.stringify(resp.instructions[i+1]));
-          //   console.log(x);
-          //   var longB = resp.instructions[i + 1].text.maneuver.location[0];
-          //   var latB = resp.instructions[i + 1].text.maneuver.location[1];
-          // }
+          if (resp.instructions[i+1]) {
+            resp.instructions[i+1].text = step;
+            // var x = JSON.parse(JSON.stringify(resp.instructions[i+1]));
+            // console.log(x);
+            var longB = resp.instructions[i + 1].text.maneuver.location[0];
+            var latB = resp.instructions[i + 1].text.maneuver.location[1];
+          }
 
           console.log(latA);
           console.log(longA);
+          console.log(latB);
+          console.log(longB);
 
           var newPoint = L.latLng(latA + 1, longA); //lkonch
 
