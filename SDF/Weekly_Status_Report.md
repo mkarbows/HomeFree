@@ -80,3 +80,12 @@ suggested route.
 
 Functionality is not yet visualized through the front end. Testing of
 these algorithms was done by physically inputting latitudes and longitudes into the front end to visualize the output.
+
+
+
+### 4/26 Status Report
+This week I successfully connected the algorithm to the initialization of the front-end so that it could be tested visually with every use case. The algorithm has a lot of faults that need to be debugged. I was also confronted with determining when to give up on building it will all rights and choosing efficiency. Currently, it has a fixed maximum of waypoints at 6. This keeps the algorithm from looping infinitely.
+
+I would like to implement a few more edge cases before I decide how to clean up the fixed value. I believe that depending on the routes, the maximum number of waypoints should alter and I believe that there are steps to be taken before stating these cut offs.
+
+At the beginning of the week, when I was frustrated with how troublesome it was to build a waypoint on the front-end due to the lack of API documentation, I gave up on OSRM and changed to Google's Directions API for a day. After building waypoints successfully, I realized how difficult it was going to be to access Google's response object and tweak it the same way I could with OSRM. So this weekend I finally buckled down and built way points with OSRM.
