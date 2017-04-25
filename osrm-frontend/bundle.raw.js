@@ -18946,6 +18946,7 @@ router._convertRoute = function(responseRoute) {
 
   if (resp.instructions && resp.instructions.length) {
     var i = 0;
+    console.log(resp.instructions);
     responseRoute.legs.forEach(function(leg) {
       leg.steps.forEach(function(step) {
         // abusing the text property to save the original osrm step
@@ -18991,13 +18992,13 @@ router._convertRoute = function(responseRoute) {
               scaledDeltaX = deltaXsign * ratio;
             } else {
               scaledDeltaY = deltaYsign * ratio;
-              scaledDeltaX = deltaXsign * (1/m) * ratio;
+              scaledDeltaX = deltaXsign * (1/x) * ratio;
             }
           }
 
-          var newPoint = L.latLng(latA + scaledDeltaX, longA + scaledDeltaY); //lkonch
+          var newPoint = L.latLng(latA + scaledDeltaX, longA + scaledDeltaY);
 
-          plan.spliceWaypoints(1, 0, newPoint);
+          plan.spliceWaypoints(i, 0, newPoint);
 
 
          }
@@ -19005,7 +19006,6 @@ router._convertRoute = function(responseRoute) {
       });
     });
   };
-  // console.log(resp); //lkonch
   return resp;
 };
 
@@ -19036,22 +19036,6 @@ function addWaypoint(e) {
     lrmControl.spliceWaypoints(length - 1, 1, e.latlng);
   }
 }
-
-//lkonch
-// function buildWaypoint(latlng) {
-//
-//   var length = lrmControl.getWaypoints().filter(function(pnt) {
-//
-//     return pnt.latLng;
-//   });
-//   length = length.length;
-//   if (!length) {
-//     lrmControl.spliceWaypoints(0, 1, latlng);
-//   } else {
-//     if (length === 1) length = length + 1;
-//     lrmControl.spliceWaypoints(length - 1, 1, latlng);
-//   }
-// }
 
 
 // User selected routes
