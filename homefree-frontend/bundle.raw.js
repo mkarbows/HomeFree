@@ -18936,13 +18936,29 @@ var controlOptions = {
   collapsible: options.lrm.collapsible
 };
 
+
 var router = (new L.Routing.OSRMv1(controlOptions));
 
+
 router._convertRouteOriginal = router._convertRoute;
+
+console.log(controlOptions);
 
 router._convertRoute = function(responseRoute) {
   // monkey-patch L.Routing.OSRMv1 until it's easier to overwrite with a hook
   var resp = this._convertRouteOriginal(responseRoute);
+
+  //find distance to determine how many way points
+  var x1 = controlOptions.plan._waypoints[0].latLng.lat;
+  var x2 = controlOptions.plan._waypoints[0].latLng.lng;
+  var lengthrn = controlOptions.plan._waypoints.length - 1;
+  var y1 = controlOptions.plan._waypoints[lengthrn].latLng.lat;
+  var y2 = controlOptions.plan._waypoints[lengthrn].latLng.lng;
+  var distance = Math.sqrt(Math.pow((x2-x1),2)+Math.pow((y2-y1),2));
+  var distanceCondition = (distance/100)*2;
+  console.log("instructionNumber: " + resp.instructions.length);
+  console.log("dist: " + distance);
+  console.log("distcond: " + distanceCondition);
 
   if (resp.instructions && resp.instructions.length) {
     var i = 0;
@@ -18953,8 +18969,11 @@ router._convertRoute = function(responseRoute) {
         // for later use in the itnerary builder
         resp.instructions[i].text = step;
 
+        //determine if more waypoints need to be built
+        plan.waypoint
+
         //lkonch
-        if (resp.instructions[i] && (resp.instructions[i].modifier === "Left" || resp.instructions[i].modifier === "SharpLeft" || resp.instructions[i].modifier === "SlightLeft") && resp.instructions.length < 6) {
+        if (resp.instructions[i] && (resp.instructions[i].modifier === "Left" || resp.instructions[i].modifier === "SharpLeft" || resp.instructions[i].modifier === "SlightLeft") && resp.instructions.length <= distanceCondition) {
           var longA = resp.instructions[i].text.maneuver.location[0];
           var latA = resp.instructions[i].text.maneuver.location[1];
 
@@ -18966,7 +18985,7 @@ router._convertRoute = function(responseRoute) {
             var latB = resp.instructions[i + 1].text.maneuver.location[1];
           }
 
-          var ratio = 0.0015;
+          var ratio = 0.0015; //one block ratio
 
           var deltaX = latA - latB;
           var deltaY = longA - longB;
